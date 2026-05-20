@@ -6,7 +6,7 @@
       "Bash(Sort-Object FullName)",
       "Bash(npm install *)",
       "Bash(npm uninstall *)",
-      "Bash(del \"c:\\\\Users\\\\gundo\\\\OneDrive\\\\Masaüstü\\\\network_project\\\\backend\\\\src\\\\config\\\\veritabani.ts\")",
+      
       "Bash(echo \"EXIT:$?\")"
     ]
   }
