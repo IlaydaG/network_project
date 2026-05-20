@@ -53,13 +53,19 @@ network_project/
 
 ## Kurulum
 
-### 1. PostgreSQL Veritabanını Hazırla
+### 1. RabbitMQ'yu Docker ile Başlat
 
 ```bash
-psql -U postgres -f backend/src/database/schema.sql
+docker compose up -d
 ```
 
-### 2. Backend Kurulumu
+RabbitMQ yönetim paneli: http://localhost:15672 (kullanıcı: `guest`, şifre: `guest`)
+
+### 2. Firebase / Firestore Veritabanını Hazırla
+
+Firebase Console'dan proje oluştur, `.env` içindeki Firebase değişkenlerini güncelle.
+
+### 3. Backend Kurulumu
 
 ```bash
 cd backend

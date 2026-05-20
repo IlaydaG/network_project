@@ -51,19 +51,15 @@ sunucu.listen(PORT, async () => {
   // Firebase Firestore bağlantısını kur
   firebaseBaslat();
 
-  // RabbitMQ bağlantısı (RABBITMQ_URL env varsa etkinleşir, yoksa EventEmitter fallback)
-  if (process.env.RABBITMQ_URL) {
-    await rabbitmqBaslat();
-  }
+  // RabbitMQ bağlantısını kur
+  await rabbitmqBaslat();
 
   // PATTERN: Ventilator-Worker-Sink - Pipeline işçisini başlat
   await isciBaslat();
 
   console.log(`📡 Sunucu   : http://localhost:${PORT}`);
   console.log(`🔌 WebSocket : ws://localhost:${PORT}`);
-  if (process.env.RABBITMQ_URL) {
-    console.log(`🐇 RabbitMQ  : ${process.env.RABBITMQ_URL}`);
-  }
+  console.log(`🐇 RabbitMQ  : ${process.env.RABBITMQ_URL}`);
 });
 
 export { io };
